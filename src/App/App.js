@@ -6,24 +6,25 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      reservations: [
-      ]
+      reservations: []
     }
   }
 
    componentDidMount = () => {
     fetch('http://localhost:3001/api/v1/reservations')
     .then(response => response.json())
-    .then(data => console.log(data))
-    // .then(data => this.setState( {data: data.reservations} ))
-    // .then(date => console.log({reservations: data}))
+    //data below is undefined so not being recieved correctly
+    //the url for the api is reservations
+    //the data itself is an array with objects within but there isn't a name for either
+    .then(data => this.setState( {reservations: data} ))
+    .then(data => console.log("data2", data))
    }
+
 
   render() {
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
-        <h1 className='testing'>Insert new reservation below</h1>
         {!this.state.reservations.length && <Reservations reservations={this.state.reservations}/>}
         <div className='resy-form'>
         </div>
