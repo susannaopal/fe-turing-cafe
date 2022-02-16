@@ -9,7 +9,6 @@ const Reservations = ({reservations}) => {
     //maps over the reservations in order to get each on a card 
     //need to pass in the props here for the card from app (parent) to card (child of reservation container)
   //see what the data from the api has properties and also need a key
-  })
   return (
       <Card 
         id={reservation.id}
@@ -20,6 +19,14 @@ const Reservations = ({reservations}) => {
         number={reservation.number}
       />
   )
+  })
+
+  return (
+    <div className='reservation-container'>
+      {reservationCards}
+    </div>
+  )
+  
 }
 
 export default Reservations;
