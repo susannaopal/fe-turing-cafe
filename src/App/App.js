@@ -36,4 +36,6 @@ class App extends Component {
   }
 }
 
+//note: making this change to push from newly set up repo
+
 export default App;
